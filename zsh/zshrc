@@ -1,0 +1,46 @@
+#!/bin/sh
+
+ZSHPLUGINDIR=$HOME/.local/share/zsh
+
+setopt appendhistory
+setopt histignorealldups
+setopt autocd extendedglob nomatch menucomplete
+setopt interactive_comments
+unsetopt BEEP
+
+# do not highlight pasted text
+zle_highlight=('paste:none')
+
+# Completions
+autoload -U compinit                # Basic completion
+zstyle ':completion:*' menu select  # Menu
+zmodload zsh/complist               # Completion listing extensions
+_comp_options+=(globdots)           # Include hidden files
+
+# Colors
+autoload -U colors && colors
+
+# Useful Functions
+source "$ZDOTDIR/zsh-functions"
+
+# Normal files to source
+source "$ZDOTDIR/zsh-exports"
+source "$ZDOTDIR/zsh-vim-mode"
+source "$ZDOTDIR/zsh-aliases"
+source "$ZDOTDIR/zsh-prompt"
+source "$ZDOTDIR/zsh-keys"
+
+# Plugins
+zsh_add_plugin "zsh-users/zsh-autosuggestions"
+zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
+# For more plugins: https://github.com/unixorn/awesome-zsh-plugins
+# More completions https://github.com/zsh-users/zsh-completions
+
+compinit
+
+# Turn off text underline
+(( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[path]="fg=white,bold"
+ZSH_HIGHLIGHT_STYLES[precommand]="fg=green,bold"
+ZSH_HIGHLIGHT_STYLES[suffix-alias]="fg=green,bold"
+ZSH_HIGHLIGHT_STYLES[autodirectory]="fg=green,bold"

@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# History
+HISTFILE="$HOME/.zsh_history"
+HISTCONTROL=ignoredups
+HISTSIZE=10000
+SAVEHIST=10000
+
+# Path
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+PATH="$HOME/.local/bin:$PATH"
+PATH="$HOME/bin:$PATH"
+PATH="$HOME/.cargo/bin:$PATH"
+PATH="$HOME/.local/share/lua-language-server/bin:$PATH"
+PATH="$HOME/.local/share/go/bin:$PATH"
+
+# Latex
+#PATH="$HOME/.local/texlive/2022/bin/x86_64-linux:$PATH"
+#MANPATH="$HOME/.local/texlive/2022/texmf-dist/doc/man"
+#INFOPATH="$HOME/.local/texlive/2022/texmf-dist/doc/info"
+
+export NODE_PATH="/usr/local/lib/node_modules"
+
+
+# Man
+export MANPAGER='nvim +Man!'
+
+# God's tools
+eval "$(zoxide init zsh)"
+
+# Environment variables set everywhere
+EDITOR="nvim"
+TERMINAL="alacritty"
+BROWSER="google-chrome"
+
+# For QT Themes
+QT_QPA_PLATFORMTHEME=qt5ct

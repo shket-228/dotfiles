@@ -1,0 +1,38 @@
+# Key bindings
+bindkey -s "^E" "nvim .^M"
+bindkey -s "^F" "nvim . -c 'Telescope find_files'^M"
+bindkey -s "^G" "nvim . -c 'Telescope live_grep'^M"
+bindkey "^C" vi-cmd-mode
+bindkey "^L" autosuggest-accept
+bindkey "^S" autosuggest-toggle
+bindkey "^H" backward-kill-word
+bindkey "^[[3;5~" kill-word
+bindkey "^P" up-history
+bindkey "^N" down-history
+bindkey "^K" up-history
+bindkey "^J" down-history
+
+# Stty
+stty stop undef  # disable ctrl-s to freeze terminal.
+stty start undef
+stty intr "^Q"
+stty werase "^H"
+
+# Completion menu movements
+bindkey -M menuselect "^J" vi-down-line-or-history
+bindkey -M menuselect "^K" vi-up-line-or-history
+#bindkey -M menuselect "^H" vi-backward-char
+#bindkey -M menuselect "^L" vi-forward-char
+bindkey -M menuselect "^[[Z" vi-up-line-or-history
+bindkey -M menuselect "^M" .accept-line
+bindkey -M menuselect "^L" accept-line
+
+# Vim bindings
+bindkey -M viins "^?" backward-delete-char
+bindkey -M visual -s "^C" "^["
+bindkey -M vicmd "^K" up-history
+bindkey -M vicmd "^J" down-history
+bindkey -M vicmd "j" down-line
+bindkey -M vicmd "k" up-line
+bindkey -M vicmd "^S" autosuggest-toggle
+bindkey -rM vicmd ":"

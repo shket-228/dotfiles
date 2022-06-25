@@ -1,0 +1,14 @@
+- [ ] overwrite all configs using **only lua**
+- [ ] undotree
+- [ ] learn movements for navigating through classes/methods
+- [ ] configure snippets
+- [ ] treesitter scope selectors keybindings
+- [ ] treesitter textobjects
+- [x] highlighted text color
+### Lsp
+- [ ] pyright replace diagnostics
+- [ ] prioritize djhtml fomatting over html-lsp
+- [ ] run tsserver for `.html` without diagnostics
+- [ ] try null-ls code actions (refactoring)
+- [ ] lspsaga
+- [ ] symbols-outline
