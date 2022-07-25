@@ -29,6 +29,7 @@ source "$ZDOTDIR/zsh-vim-mode"
 source "$ZDOTDIR/zsh-aliases"
 source "$ZDOTDIR/zsh-prompt"
 source "$ZDOTDIR/zsh-keys"
+source "$ZDOTDIR/zsh-private"
 
 # Plugins
 zsh_add_plugin "zsh-users/zsh-autosuggestions"

@@ -1,18 +1,14 @@
-local project_group = vim.api.nvim_create_augroup("project_specific", { clear = true })
+local project_group = vim.api.nvim_create_augroup("project_specific", {clear = true})
+local opt = vim.opt
 
 vim.api.nvim_create_autocmd("VimEnter", {
-    pattern = {"*/projects/*"},
+    pattern = {"*/avegabug/client*"},
     callback = function()
-        require("telescope").setup({
-            defaults = {
-                file_ignore_patterns = {
-                    --"migrations",
-                    "cogito/design",
-                },
-            },
-        })
+        opt.tabstop = 2
+        opt.softtabstop = 2
+        opt.shiftwidth = 2
     end,
-    group = project_group,
+    group = project_group
 })
 
 -- vim.api.nvim_create_autocmd("BufEnter", {

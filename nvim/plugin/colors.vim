@@ -2,8 +2,9 @@ set background=dark
 
 let g:material_style = "deep ocean"
 let g:tokyonight_style = "night"
+let g:catppuccin_flavour = "mocha"
 
-colorscheme rose-pine
+colorscheme catppuccin
 
 hi CurSearch guibg=None guifg=None
 
@@ -19,7 +20,7 @@ fun! SetTransparentBG()
     hi LineNr guibg=None
     hi SignColumn guibg=None
     hi TabLineFill guibg=None
-    "hi TabLine guibg=None
+    hi TabLine guibg=None
     "hi EndOfBuffer guibg=None
     set pumblend=20
     hi PmenuSel blend=0
@@ -29,5 +30,5 @@ endfun
 augroup appearance
     autocmd!
     autocmd SourcePost,Colorscheme * call SetWideBorder()
-    "autocmd SourcePost,Colorscheme * call SetTransparentBG()
+    " autocmd SourcePost,Colorscheme * call SetTransparentBG()
 augroup EN

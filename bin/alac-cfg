@@ -6,16 +6,16 @@ NOT_OPTION='^[^-].*'
 
 while [[ $1 ]]; do
     case $1 in
-        -c | --colo | --color)
+        -c | --color)
             if [[ $2 =~ $NOT_OPTION ]]; then
                 sed -Ei "s/(alacritty\/colors).*$/\1\/$2\.yml/" $AL_YML
                 shift
             else
                 cat $AL_YML | grep 'alacritty/colors'
             fi;;
-        -o | --opac | -opacity)
+        -o | --opacity)
             if [[ $2 =~ $FLOAT_RE ]]; then
-                sed -Ei "s/(opacity:).*$/\1 $1/" $AL_YML
+                sed -Ei "s/(opacity:).*$/\1 $2/" $AL_YML
                 shift
             else
                 cat $AL_YML | grep opacity 

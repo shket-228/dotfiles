@@ -1,0 +1,28 @@
+# General
+.git/
+*.sqlite3
+build/
+metadata.json
+requirements.txt
+
+# Images
+*.png
+*.jpg
+*.jpeg
+*.ico
+*.webp
+media/
+
+# Python
+.venv/
+__pycache__/
+migrations/
+__init__.py
+pyrightconfig.json
+manage.py
+
+# JavaScript
+node_modules/
+package-lock.json
+bootstrap.min.css
+static/libs/
